@@ -120,8 +120,6 @@ pubdev.cmd
 # System Files
 .DS_Store
 Thumbs.db
-package-lock.json
-package.json
 .editorconfig
 .eslintrc.json
 default.code-workspace
