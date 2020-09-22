@@ -101,7 +101,7 @@ export class RxJsDemo implements OnInit {
 			(val) => {
 				console.log('empty: ' + val);
 			},
-			(error) => {
+			(error.message) => {
 				console.log('error');
 			},
 			() => {
