@@ -71,38 +71,38 @@ export class RxJsDemo implements OnInit {
 
 	ngOnInit() {
 		//range
-		this.rangeObservable.subscribe((val) => {
+		this.rangeObservable.subscribe(val => {
 			console.log('range: ' + val);
 			this.replayRange.next(val);
 		});
 
 		//of
-		this.of_example.subscribe((val) => {
+		this.of_example.subscribe(val => {
 			console.log('of: ' + val);
 		});
 
 		//from
-		this.from_example.subscribe((val) => {
+		this.from_example.subscribe(val => {
 			console.log('from: ' + val);
 		});
 
 		//interval
-		this.interval_example.subscribe((val) => {
+		this.interval_example.subscribe(val => {
 			console.log('interval: ' + val);
 		});
 
 		//interval
-		this.timer_example.subscribe((val) => {
+		this.timer_example.subscribe(val => {
 			console.log('timer: ' + val);
 		});
 
 		//empty
 		this.empty_example.subscribe(
-			(val) => {
+			val => {
 				console.log('empty: ' + val);
 			},
-			(error.message) => {
-				console.log('error');
+			error => {
+				console.log('error', error);
 			},
 			() => {
 				console.log('complete');
@@ -110,12 +110,12 @@ export class RxJsDemo implements OnInit {
 		);
 
 		//map I
-		this.mapI_example.pipe(map((a: number) => a * 2)).subscribe((val) => {
+		this.mapI_example.pipe(map((a: number) => a * 2)).subscribe(val => {
 			console.log('map I: ' + val);
 		});
 
 		//map II
-		this.mapII_example.pipe(map((a: number) => a * 2)).subscribe((val) => {
+		this.mapII_example.pipe(map((a: number) => a * 2)).subscribe(val => {
 			console.log('map II: ' + val);
 		});
 
@@ -123,25 +123,25 @@ export class RxJsDemo implements OnInit {
 		this.mapII_example
 			.pipe(
 				map((a: number) => a * 2),
-				tap((a) => console.log('tap: ' + a)),
+				tap(a => console.log('tap: ' + a)),
 				map((a: number) => a + 2)
 			)
-			.subscribe((val) => {
+			.subscribe(val => {
 				console.log('map,do,map: ' + val);
 			});
 
 		//interesting that this works in the console but not in the view
-		this.mapTo_example.pipe(mapTo('MapTo Message')).subscribe((val) => {
+		this.mapTo_example.pipe(mapTo('MapTo Message')).subscribe(val => {
 			console.log('mapTo: ' + val);
 		});
 
 		//filter
-		this.filter_example.pipe(filter((val: any) => val % 2 === 0)).subscribe((val) => {
+		this.filter_example.pipe(filter((val: any) => val % 2 === 0)).subscribe(val => {
 			console.log('filter: ' + val);
 		});
 
 		//pluck
-		this.pluck_example.pipe(pluck('name')).subscribe((val) => {
+		this.pluck_example.pipe(pluck('name')).subscribe(val => {
 			console.log('pluck: ' + val);
 		});
 	}
