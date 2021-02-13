@@ -6,22 +6,15 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./obj-demo.component.css'],
 })
 export class ObjDemoComponent implements OnInit {
-	names = ['Walker', 'Greg'];
+	public names: string[] = ['Walker', 'Greg'];
 
 	constructor() {}
 
 	ngOnInit(): void {
-		const obj = {
-			name: this.names,
-			doSort: function () {
-				return this.name.sort((a, b) => a.localeCompare(b));
-			},
-		};
-		console.log(obj.doSort());
-		this.sayHello();
+		this.sortNames(this.names);
 	}
 
-	sayHello() {
-		console.log(`Greetings ${this.names}`);
+	sortNames(namesArray: string[]): string[] {
+		return namesArray.sort((a, b) => a.localeCompare(b));
 	}
 }

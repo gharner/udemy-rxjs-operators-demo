@@ -7,7 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { firebase } from '../../environments/environment';
 import { AppComponent } from '../app.component';
-import { ContentProjectionComponent } from '../components/content-projection/content-projection.component';
+import { ContentComponent } from '../components/content/content.component';
+import { ContentProjectionComponent } from '../components/content/content-projection/content-projection.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { ObjDemoComponent } from '../components/obj-demo/obj-demo.component';
 import { RxJsDemo } from '../components/rxjs-demo/rxjs-demo.component';
@@ -28,7 +29,15 @@ import { AppRoutingModule } from '../routings/app.routing.module';
 		MaterialModule,
 		NGPrimeModule,
 	],
-	declarations: [AppComponent, ContentProjectionComponent, LayoutComponent, ObjDemoComponent, RxJsDemo, StartComponent],
+	declarations: [
+		AppComponent,
+		ContentComponent,
+		ContentProjectionComponent,
+		LayoutComponent,
+		ObjDemoComponent,
+		RxJsDemo,
+		StartComponent,
+	],
 	providers: [{ provide: SETTINGS, useValue: {} }],
 	bootstrap: [AppComponent],
 })

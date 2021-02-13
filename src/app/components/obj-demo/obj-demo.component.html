@@ -1,1 +1,3 @@
-<p>obj-demo works!</p>
+<ng-container *ngIf="names">
+    <p *ngFor="let name of names">{{name}}</p>
+</ng-container>
