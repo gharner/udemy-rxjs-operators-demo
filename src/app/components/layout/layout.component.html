@@ -1,0 +1,16 @@
+<ng-container *ngIf="authService.isLoggedIn">
+    <mat-toolbar color="primary">
+        <div> <button mat-button [matMenuTriggerFor]="sandbox"><span class="menubar">Sandbox</span></button>
+            <mat-menu #sandbox="matMenu" yPosition="below">
+                <button mat-menu-item (click)="onMenuClick('/start')">Start</button>
+                <button mat-menu-item (click)="onMenuClick('/objectDemo')">Object Demo</button>
+                <button mat-menu-item (click)="onMenuClick('/contentProjection')">Content Projection</button>
+                <button mat-menu-item (click)="onMenuClick('/RxJsDemo')">RxJs Demo</button>
+                <button mat-menu-item (click)="onLogoutClick()">Logout</button>
+            </mat-menu>
+        </div>
+        <span class="toolbar-spacer"></span>
+        <div>{{authService.loggedInUserEmail}}</div>
+    </mat-toolbar>
+</ng-container>
+<router-outlet></router-outlet>

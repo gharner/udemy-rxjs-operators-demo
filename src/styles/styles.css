@@ -1,0 +1,32 @@
+@import '~primeng/resources/primeng.min.css';
+@import '~primeng/resources/themes/saga-orange/theme.css';
+@import '~primeicons/primeicons.css';
+@import '~primeflex/primeflex.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+	cursor: pointer;
+}
+
+body {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+.menubar {
+	font-size: 1.25em;
+}
