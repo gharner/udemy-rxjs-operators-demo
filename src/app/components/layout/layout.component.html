@@ -13,5 +13,7 @@
         <span class="toolbar-spacer"></span>
         <div>{{authService.loggedInUserEmail}}</div>
     </mat-toolbar>
+    <mat-card>
+        <router-outlet></router-outlet>
+    </mat-card>
 </ng-container>
-<router-outlet></router-outlet>
