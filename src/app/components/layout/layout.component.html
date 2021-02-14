@@ -3,9 +3,10 @@
         <div> <button mat-button [matMenuTriggerFor]="sandbox"><span class="menubar">Sandbox</span></button>
             <mat-menu #sandbox="matMenu" yPosition="below">
                 <button mat-menu-item (click)="onMenuClick('/start')">Start</button>
+                <button mat-menu-item (click)="onMenuClick('/contentProjection')">Content Projection Demo</button>
+                <button mat-menu-item (click)="onMenuClick('/firecloudDemo')">Firecloud Demo</button>
                 <button mat-menu-item (click)="onMenuClick('/objectDemo')">Object Demo</button>
-                <button mat-menu-item (click)="onMenuClick('/contentProjection')">Content Projection</button>
-                <button mat-menu-item (click)="onMenuClick('/RxJsDemo')">RxJs Demo</button>
+                <button mat-menu-item (click)="onMenuClick('/rxjsDemo')">RxJs Demo</button>
                 <button mat-menu-item (click)="onLogoutClick()">Logout</button>
             </mat-menu>
         </div>

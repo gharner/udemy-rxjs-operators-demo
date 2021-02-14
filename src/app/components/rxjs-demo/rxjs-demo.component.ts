@@ -29,7 +29,7 @@ export class RxJsDemo implements OnInit, OnDestroy {
 		//interval
 		this.intervalExample = interval(1000);
 
-		// blocked for colapsing
+		// blocked for collapsing
 		{
 			/*
 			//range

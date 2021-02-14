@@ -7,15 +7,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { firebase } from '../../environments/environment';
 import { AppComponent } from '../app.component';
-import { ContentComponent } from '../components/content/content.component';
 import { ContentProjectionComponent } from '../components/content/content-projection/content-projection.component';
+import { ContentComponent } from '../components/content/content.component';
+import { FirecloudComponent } from '../components/firecloud/firecloud.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { ObjDemoComponent } from '../components/obj-demo/obj-demo.component';
 import { RxJsDemo } from '../components/rxjs-demo/rxjs-demo.component';
 import { StartComponent } from '../components/start/start.component';
+import { AppRoutingModule } from '../routings/app.routing.module';
 import { MaterialModule } from './material.module';
 import { NGPrimeModule } from './ngprime.module';
-import { AppRoutingModule } from '../routings/app.routing.module';
 
 @NgModule({
 	imports: [
@@ -23,8 +24,8 @@ import { AppRoutingModule } from '../routings/app.routing.module';
 		AngularFireModule.initializeApp(firebase.Cfg, 'afs'),
 		AngularFirestoreModule,
 		AppRoutingModule,
-		BrowserModule,
 		BrowserAnimationsModule,
+		BrowserModule,
 		FormsModule,
 		MaterialModule,
 		NGPrimeModule,
@@ -33,6 +34,7 @@ import { AppRoutingModule } from '../routings/app.routing.module';
 		AppComponent,
 		ContentComponent,
 		ContentProjectionComponent,
+		FirecloudComponent,
 		LayoutComponent,
 		ObjDemoComponent,
 		RxJsDemo,
