@@ -10,13 +10,11 @@ declare var gapi: any;
 	providedIn: 'root',
 })
 export class AuthService {
-	//private user$: Observable<firebase.User>;
-	public isLoggedIn: boolean;
-	public loggedInUserEmail: string;
+	user$: Observable<firebase.User>;
 
 	constructor(public afAuth: AngularFireAuth) {
 		this.initClient();
-		//this.user$ = afAuth.authState;
+		this.user$ = afAuth.authState;
 	}
 
 	initClient() {
@@ -32,15 +30,16 @@ export class AuthService {
 		const token = googleUser.getAuthResponse().id_token;
 		const credential = auth.GoogleAuthProvider.credential(token);
 
-		return await this.afAuth.signInWithCredential(credential).catch(error => {
-			console.log(error);
+		return new Promise((resolve, reject) => {
+			this.afAuth.signInWithCredential(credential).then(
+				data => resolve(data),
+				error => reject(error.message)
+			);
 		});
 	}
 
-	async logout() {
-		await this.afAuth.signOut().catch(error => {
-			console.log(error);
-		});
+	logout() {
+		this.afAuth.signOut();
 	}
 
 	getAuth() {

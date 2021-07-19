@@ -8,17 +8,35 @@ import { AuthService } from '../../services/auth.service';
 	styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent implements OnInit {
+	public loggedInUser: string;
+	public isLoggedIn: boolean;
 	constructor(public authService: AuthService, public router: Router) {}
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.getAuth();
+	}
 
 	public onMenuClick(route: string): void {
 		this.router.navigate([route]);
 	}
 
 	public onLogoutClick(): void {
-		this.authService.isLoggedIn = false;
-
 		this.authService.logout();
 		this.router.navigate(['/login']);
+	}
+
+	getAuth() {
+		this.authService.getAuth().subscribe(
+			auth => {
+				if (auth) {
+					this.loggedInUser = auth.email;
+					this.isLoggedIn = true;
+				} else {
+					this.isLoggedIn = false;
+				}
+			},
+			error => {
+				console.log(error);
+			}
+		);
 	}
 }

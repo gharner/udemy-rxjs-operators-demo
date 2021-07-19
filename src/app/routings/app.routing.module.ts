@@ -9,13 +9,13 @@ import { StartComponent } from '../components/start/start.component';
 import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
-	{ path: '', component: StartComponent, canActivate: [AuthGuard] },
+	{ path: '', redirectTo: '/start', pathMatch: 'full' },
+	{ path: 'login', component: LoginComponent },
+	{ path: 'start', component: StartComponent, canActivate: [AuthGuard] },
 	{ path: 'contentProjection', component: ContentProjectionComponent, canActivate: [AuthGuard] },
 	{ path: 'firecloudDemo', component: FirecloudComponent, canActivate: [AuthGuard] },
 	{ path: 'objectDemo', component: ObjDemoComponent, canActivate: [AuthGuard] },
 	{ path: 'rxjsDemo', component: RxJsDemo, canActivate: [AuthGuard] },
-	{ path: 'login', component: LoginComponent },
-	{ path: '**', redirectTo: '/login' },
 ];
 @NgModule({
 	exports: [RouterModule],
