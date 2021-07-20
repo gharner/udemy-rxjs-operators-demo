@@ -41,28 +41,4 @@ export class FirecloudComponent implements OnInit {
 				}
 			);
 	}
-
-	executeFirecloudFunction() {
-		this.firecloudService.addNodeType();
-	}
-
-	/* 	removeProgramMemberships(programId: string, accountId: string) {
-		let payload: ProgramMemberships = { memberships: [] };
-		this.programsService
-			.getSingleProgram(programId)
-			.then((program: Program) => {
-				payload.memberships = program.memberships.filter(x => x.memberID !== accountId);
-				this.programsService.updateProgram(programId, payload);
-				console.log(payload);
-			})
-			.catch(error => {
-				console.log(error);
-				this.messageService.add({
-					severity: 'error',
-					summary: 'Something went wrong in the AccountsProgramsComponent function removeProgramMemberships!',
-					detail: error.error.text,
-					sticky: true,
-				});
-			});
-	} */
 }

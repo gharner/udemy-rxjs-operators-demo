@@ -38,23 +38,4 @@ export class FirecloudService {
 				})
 			);
 	}
-
-	addNodeType() {
-		let payload = { mas: { nodeType: '' } };
-		const accounts = this.afs.firestore.collection('mas-accounts').get();
-		accounts.then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				const data = doc.data();
-				const node = data.mas.accountSettings;
-				if (node) {
-					if (node.billing === 'true') {
-						payload.mas.nodeType = 'parent';
-					} else {
-						payload.mas.nodeType = 'child';
-					}
-					this.afs.collection('mas-accounts').doc(doc.id).set(payload, { merge: true });
-				}
-			});
-		});
-	}
 }
