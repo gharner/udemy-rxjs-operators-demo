@@ -4,6 +4,7 @@ import { ContentProjectionComponent } from '../components/content/content-projec
 import { FirecloudComponent } from '../components/firecloud/firecloud.component';
 import { LoginComponent } from '../components/login/login.component';
 import { ObjDemoComponent } from '../components/obj-demo/obj-demo.component';
+import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
 import { RxJsDemo } from '../components/rxjs-demo/rxjs-demo.component';
 import { StartComponent } from '../components/start/start.component';
 import { AuthGuard } from '../guards/auth.guard';
@@ -16,6 +17,7 @@ const routes: Routes = [
 	{ path: 'firecloudDemo', component: FirecloudComponent, canActivate: [AuthGuard] },
 	{ path: 'objectDemo', component: ObjDemoComponent, canActivate: [AuthGuard] },
 	{ path: 'rxjsDemo', component: RxJsDemo, canActivate: [AuthGuard] },
+	{ path: 'form', component: ReactiveFormComponent, canActivate: [AuthGuard] },
 ];
 @NgModule({
 	exports: [RouterModule],

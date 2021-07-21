@@ -1,0 +1,11 @@
+<form [formGroup]="exampleForm" (ngSubmit)="onSubmit($event)">
+    <p-card>
+        <div>
+            <input type="text" formControlName="exampleText1" placeholder="Enter some example text" pInputText />
+        </div>
+        <div>
+            <input type="text" formControlName="exampleText2" placeholder="Enter some example text" pInputText />
+        </div>
+        <p-button label="Save" icon="pi pi-check" type="submit" [disabled]="!exampleForm.valid"></p-button>
+    </p-card>
+</form>
